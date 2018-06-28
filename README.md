@@ -245,16 +245,16 @@
 
 
 > App.vue
-> 
-> ```
-> <template>
+ 
+```
+<template>
      <div id="app">
        <transition name="fade" mode="out-in">
          <router-view class="full-page"/>
        </transition>
      </div>
 </template>
-> ```
+```
 
 定义顶级路由出口,所有页面都以这里的`router-view`为出口,并且定义一个过渡动画(透明渐变),`mode="out-in"`动画模式为先渲染,在进行过渡,以`fade`为样式。
 
@@ -320,14 +320,15 @@ export default new Router({
   ]
 })
 
-> ```
+```
 
 * 使用了webpack提供的按需加载`import('@/views/Home')`。
 * 定义了路由元信息`meta.cname`,设置每个页面的`title`。
 
 
 > vuex store/index.js
-> 
+
+
 ```
 import Vue from 'vue'
 import Vuex from 'vuex'
@@ -344,12 +345,12 @@ export default new Vuex.Store({
   }
 })
 
-> ```
-> 
+```
+ 
 实例化一个vuex对象,将store分割成模块,每个模块拥有自己的 state、mutation、action、getter。
 
 > store/moudules/userList.js
-> 
+ 
 ```
 import axios from 'axios'
 import data from '../../mock'
@@ -397,14 +398,14 @@ export default {
   actions
 }
 
-> ```
-> 
-> * 这里定义一个`getUserList`的`actions`用来读取远程数据,远程接口为`/userList`,传递2个参数,`page`第几页和`pageSize`每页显示数量以完成分页,该接口被拦截。
-> * 读取到数据后,唤醒`mutations`将数据存入到`state`中,此时可以在对应的vue文件中使用`mapState`方法读取到。
+```
+
+* 这里定义一个`getUserList`的`actions`用来读取远程数据,远程接口为`/userList`,传递2个参数,`page`第几页和`pageSize`每页显示数量以完成分页,该接口被拦截。
+* 读取到数据后,唤醒`mutations`将数据存入到`state`中,此时可以在对应的vue文件中使用`mapState`方法读取到。
 
 
 > mock/data/userList.js
-> 
+ 
 ```
 import Mock from 'mockjs'
 
@@ -464,13 +465,13 @@ export const ShopList = Mock.mock({
   ]
 })
 
-> ```
-> 
-> * 这里使用了mock来生成随机数据并且导出。
+```
+ 
+* 这里使用了mock来生成随机数据并且导出。
 
 
 > mock/index.js
-> 
+ 
 ```
 import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
@@ -558,18 +559,18 @@ export default {
   }
 }
 
-> ```
+```
 
 * 这里是后台接口(模拟),所有请求的接口都会被拦截(当成功匹配到),并且开启请求延迟以完成loading动画提高真实性。
 * 根据传递的参数进行相应过滤,返回前端需要的数据,由于接收到的数据是字符串,需要用`JSON.parse`转换成对象类型,注释很详细,不多做解释了。
 
 
 > views/*.vue,存放了各页面文件
-> * Home.vue
-> * Login.vue
-> * UserList.vue
-> * ShopList.vue
->
+* Home.vue
+* Login.vue
+* UserList.vue
+* ShopList.vue
+
 
 ```
 <template>
