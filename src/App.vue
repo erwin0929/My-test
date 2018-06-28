@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view class="full-page"/>
+    <transition name="fade" mode="out-in">
+      <router-view class="full-page"/>
+    </transition>
   </div>
 </template>
 
@@ -41,5 +43,18 @@ export default {
   h2,
   h3{
     margin: 0;
+  }
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
+  .pagination{
+    padding: 25px 0;
+    display: flex;
+    justify-content: flex-end;
   }
 </style>

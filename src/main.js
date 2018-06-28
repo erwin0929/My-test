@@ -144,7 +144,7 @@ Vue.prototype.$confirm = MessageBox.confirm
 Vue.config.productionTip = false
 
 // 在路由跳转的时候，我们需要一些权限判断或者其他操作。
-// 定义全局路由守卫,监听每一次路由跳转。
+// 定义全局前置守卫,监听每一次路由跳转。
 // 该钩子函数在跳转之前执行。
 router.beforeEach((to, from, next) => {
   // 如果目标路径为登录页,那么移除sessionStorage中的user值
@@ -163,9 +163,9 @@ router.beforeEach((to, from, next) => {
   }
 })
 
-// 该钩子函数在跳转之后执行。
+// 全局路由后置守卫,该钩子函数在跳转之后执行。
 // 关闭 NProgress。
-router.afterEach(transition => {
+router.afterEach((to, from) => {
   NProgress.done()
 })
 

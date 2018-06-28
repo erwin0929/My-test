@@ -29,3 +29,29 @@ export const UserList = Mock.mock({
     }
   ]
 })
+
+export const ShopList = Mock.mock({
+  'list|133': [
+    {
+      'id|+1': 1,
+      'shopId|+1': 500,
+      'shopName': '@name',
+      'address': '@city',
+      'category|1': [
+        '江浙小吃',
+        '小吃零食',
+        '好吃的小吃'
+      ],
+      'shop|1': [
+        '王小虎夫妻店',
+        '淘宝',
+        '京东'
+      ],
+      'desc|1': [
+        '荷兰优质淡奶，奶香浓而不腻',
+        '淘宝好评',
+        '京东好评'
+      ]
+    }
+  ]
+})

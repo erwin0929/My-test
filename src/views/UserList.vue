@@ -16,10 +16,10 @@
                      @size-change="handleSizeChange"
                      :page-sizes="[5, 10, 15, 20]"
                      :page-size="pageSize"
+                     :current-page="page"
                      :total="total">
       </el-pagination>
     </div>
-
   </div>
 </template>
 
@@ -27,10 +27,16 @@
 import { mapState, mapActions } from 'vuex'
 export default {
   name: 'UserList',
+  data () {
+    return {
+      show: false
+    }
+  },
   computed: {
     // 读取state中数据
     ...mapState({
       list: state => state.userList.list,
+      page: state => state.userList.page,
       pageSize: state => state.userList.pageSize,
       total: state => state.userList.total
     })
@@ -57,9 +63,4 @@ export default {
 </script>
 
 <style scoped lang="scss" type="text/scss">
-  .pagination{
-    padding: 25px 0;
-    display: flex;
-    justify-content: flex-end;
-  }
 </style>

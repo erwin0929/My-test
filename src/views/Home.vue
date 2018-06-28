@@ -66,7 +66,9 @@
         </header>
         <!-- main 路由出口,根据路由显示页面 -->
         <main class="main">
-          <router-view></router-view>
+          <transition name="fade" mode="out-in">
+            <router-view></router-view>
+          </transition>
         </main>
       </el-col>
     </el-row>
@@ -81,6 +83,10 @@ export default {
       sysName: '',
       sysAvatar: ''
     }
+  },
+  // 在当前路由改变，但是该组件被复用时调用,例如: 在 /foo/1 和 /foo/2 之间跳转的时候
+  beforeRouteUpdate (to, from, next) {
+    next()
   },
   methods: {
     handleCommand (command) {
