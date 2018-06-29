@@ -1,5 +1,7 @@
 ## 后台管理(未完成)
 
+> 附上链接: https://erwin0929.github.io/My-test   
+> 由于部署在github上,加载稍慢耐心等待  
 > 目录结构如下
 
 ```
@@ -750,4 +752,3 @@ export default {
 
 
 
-   

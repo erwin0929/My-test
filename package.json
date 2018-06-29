@@ -1,6 +1,7 @@
 {
   "name": "my-test",
   "version": "1.0.0",
+  "homepage": "https://erwin0929.github.io/My-test/",
   "description": "A Vue.js project",
   "author": "sqq <761981721@qq.com>",
   "private": true,
@@ -11,7 +12,8 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "vue": "^2.5.2",
@@ -54,6 +56,7 @@
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
+    "gh-pages": "^1.2.0",
     "html-webpack-plugin": "^2.30.1",
     "jest": "^22.0.4",
     "jest-serializer-vue": "^0.3.0",
